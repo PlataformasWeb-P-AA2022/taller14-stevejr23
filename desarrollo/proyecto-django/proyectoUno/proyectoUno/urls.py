@@ -25,7 +25,7 @@ from administrativo import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-router.register(r'propietario', views.PropietarioViewSet)
+router.register(r'propietarios', views.PropietarioViewSet)
 router.register(r'departamento', views.DepartamentoViewSet)
 
 urlpatterns = [

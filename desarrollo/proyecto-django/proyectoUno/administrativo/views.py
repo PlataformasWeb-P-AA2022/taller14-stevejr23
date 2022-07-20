@@ -94,7 +94,6 @@ class PropietarioViewSet(viewsets.ModelViewSet):
 
 
 class DepartamentoViewSet(viewsets.ModelViewSet):
-    # class NumeroTelefonicoViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
