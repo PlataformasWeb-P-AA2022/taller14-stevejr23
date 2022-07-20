@@ -14,8 +14,8 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <p class="card-text">edad: {{ propietario.edad }}</p>
-                            <p class="card-text">nacionalidad: {{ propietario.nacionalidad }}</p>
+                            <h6 class="card-text">Edad: {{ propietario.edad }}</h6>
+                            <h6 class="card-text">Nacionalidad: {{ propietario.nacionalidad }}</h6>
                         </div>
                     </div>
                 </div>

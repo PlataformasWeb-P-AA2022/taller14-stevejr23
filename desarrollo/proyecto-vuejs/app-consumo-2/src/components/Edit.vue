@@ -7,29 +7,28 @@
                     type="text"
                     class="form-control"
                     id="nombre"
-                    v-model="estudiante.nombre"
+                    v-model="propietario.nombre"
                     v-validate="'required'"
                     name="nombre"
                     placeholder="Ingrese nombre"
-                    :class="{'is-invalid': errors.has('estudiante.nombre') && submitted}">
+                    :class="{'is-invalid': errors.has('propietario.nombre') && submitted}">
                 <div class="invalid-feedback">
                     Please provide a valid name.
                 </div>
             </div>
-            <div class="form-group">
+             <div class="form-group">
                 <label for="apellido">Apellido</label>
-                <textarea
-                    name="apellido"
+                <input
+                    type="text"
                     class="form-control"
                     id="apellido"
+                    v-model="propietario.apellido"
                     v-validate="'required'"
-                    v-model="estudiante.apellido"
-                    cols="30"
-                    rows="2"
-                    :class="{'is-invalid': errors.has('estudiante.apellido') && submitted}">
-                  </textarea>
+                    name="apellido"
+                    placeholder="Ingrese apellido"
+                    :class="{'is-invalid': errors.has('propietario.apellido') && submitted}">
                 <div class="invalid-feedback">
-                    Please provide a valid description.
+                    Please provide a valid name.
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>

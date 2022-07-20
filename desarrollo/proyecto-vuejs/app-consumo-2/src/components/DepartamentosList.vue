@@ -7,15 +7,15 @@
                         <div class="card-body">
                             <span class="card-title"><b>Costo:</b> {{ departamento.costo_depa }}</span>
                             <br>
-                            <span class="card-text"><b>Cuartos:</b> {{ departamento.num_cuartos }}</span>
+                            <span class="card-text"><b>Numero Cuartos:</b> {{ departamento.num_cuartos }}</span>
                             <br>
                             <br>
-                            <span class="card-text"><b>Banios:</b> {{ departamento.num_banios }}</span>
+                            <span class="card-text"><b>Numero Baños:</b> {{ departamento.num_banios }}</span>
                             <br>
                             <br>
-                            <span class="card-text"><b>Alicuta:</b> {{ departamento.valor_alicuta }}</span>
+                            <span class="card-text"><b>Valor Alicuta:</b> {{ departamento.valor_alicuta }}</span>
                             <br>
-                            <router-link :to="{name: 'edit_telefono', params: { id: departamento.id }}" class="btn btn-sm btn-primary">Editar</router-link>
+                            <router-link :to="{name: 'edit_departamentos', params: { id: departamento.id }}" class="btn btn-sm btn-primary">Editar</router-link>
                             <button class="btn btn-danger btn-sm ml-1" v-on:click="deleteDepartamento(departamento)">Eliminar</button>
                         </div>
                     </div>

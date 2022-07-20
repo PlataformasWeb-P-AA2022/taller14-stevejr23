@@ -18,7 +18,7 @@
             </div>
 
             <div class="form-group">
-                <label for="num_cuartos">Tipo</label>
+                <label for="num_cuartos">Numero Cuartos</label>
                 <input
                     type="text"
                     class="form-control"
@@ -27,14 +27,14 @@
                     v-validate="'required'"
                     name="tipo"
                     placeholder="Ingrese num_cuartos"
-                    :class="{'is-invalid': errors.has('departamentos.num_cuartos') && submitted}">
+                    :class="{'is-invalid': errors.has('departamento.num_cuartos') && submitted}">
                 <div class="invalid-feedback">
-                    Please provide a valid apellido.
+                    Please provide a valid cuartos.
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="num_banios">Tipo</label>
+                <label for="num_banios">Numero Banios</label>
                 <input
                     type="text"
                     class="form-control"
@@ -43,14 +43,14 @@
                     v-validate="'required'"
                     name="tipo"
                     placeholder="Ingrese num_banios"
-                    :class="{'is-invalid': errors.has('departamentos.num_banios') && submitted}">
+                    :class="{'is-invalid': errors.has('departamento.num_banios') && submitted}">
                 <div class="invalid-feedback">
-                    Please provide a valid apellido.
+                    Please provide a valid banios.
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="valor_alicuta">Tipo</label>
+                <label for="valor_alicuta">Valor</label>
                 <input
                     type="text"
                     class="form-control"
@@ -59,9 +59,9 @@
                     v-validate="'required'"
                     name="tipo"
                     placeholder="Ingrese valor_alicuta"
-                    :class="{'is-invalid': errors.has('departamentos.valor_alicuta') && submitted}">
+                    :class="{'is-invalid': errors.has('departamento.valor_alicuta') && submitted}">
                 <div class="invalid-feedback">
-                    Please provide a valid apellido.
+                    Please provide a valid Alicuta.
                 </div>
             </div>
 
@@ -96,19 +96,19 @@ export default {
         }
     },
     mounted() {
-        this.getEstudiantesList(),
-        axios.get('http://127.0.0.1:8000/api/numerost/' + this.$route.params.id + '/')
+        this.getPropietariosList(),
+        axios.get('http://127.0.0.1:8000/api/departamento/' + this.$route.params.id + '/')
             .then( response => {
                 console.log(response.data)
-                this.telefono = response.data
+                this.departamento = response.data
         });
     },
     methods: {
-      getEstudiantesList() {
+      getPropietariosList() {
             axios
-            .get('http://127.0.0.1:8000/api/estudiantes/')
+            .get('http://127.0.0.1:8000/api/propietarios/')
             .then(response => {
-                this.estudiantesList = response.data
+                this.propietariosList = response.data
             })
             .catch(error => {
                 console.log(error)
@@ -121,11 +121,11 @@ export default {
                 if (!result) {
                     return;
                 }
-                axios.put(`http://127.0.0.1:8000/api/numerost/${this.telefono.id}/`,
-                        this.telefono
+                axios.put(`http://127.0.0.1:8000/api/departamento/${this.departamento.id}/`,
+                        this.departamento
                     )
                     .then(response => {
-                        this.$router.push('/telefonos');
+                        this.$router.push('/departamentos');
                     })
             });
         }
